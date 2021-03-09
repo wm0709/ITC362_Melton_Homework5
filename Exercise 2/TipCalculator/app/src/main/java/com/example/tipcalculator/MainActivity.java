@@ -1,7 +1,9 @@
 package com.example.tipcalculator;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -23,8 +25,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Configuration config = getResources().getConfiguration();
+        modifyLayout(config);
+
         tipCalc = new TipCalculator(.17f,100.0f);
-        setContentView(R.layout.activity_main);
+
 
         billEditText = ( EditText ) findViewById(R.id.et_amount_bill);
         tipEditText = ( EditText ) findViewById(R.id.et_amount_tip_percent);
@@ -32,6 +38,20 @@ public class MainActivity extends AppCompatActivity {
         TextChangeHandler tch = new TextChangeHandler();
         billEditText.addTextChangedListener( tch );
         tipEditText.addTextChangedListener( tch );
+    }
+
+    /** Orientation Changes */
+    @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        modifyLayout(newConfig);
+    }
+
+    public void modifyLayout(Configuration newConfig){
+        if(newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE)
+            setContentView(R.layout.activity_main_landscape);
+        else if(newConfig.orientation == Configuration.ORIENTATION_PORTRAIT)
+            setContentView(R.layout.activity_main);
     }
 
     /** Called when the user clicks on the Calculate button */

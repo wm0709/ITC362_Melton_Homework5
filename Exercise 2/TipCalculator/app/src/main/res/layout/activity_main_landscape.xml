@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_label_bill"
+        style="@style/LabelStyleLandscape"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="100dp"
+        android:minWidth="120dp"
+        android:text="@string/tv_label_bill" />
+
+    <EditText
+        android:id="@+id/et_amount_bill"
+        style="@style/InputStyleLandscape"
+        android:layout_marginEnd="100dp"
+        android:layout_alignBottom="@+id/tv_label_bill"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/tv_label_bill"
+        android:hint="@string/et_amount_bill_hint"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/tv_label_tip_percent"
+        style="@style/LabelStyleLandscape"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/tv_label_bill"
+        android:layout_alignStart="@+id/tv_label_bill"
+        android:layout_alignEnd="@+id/tv_label_bill"
+        android:text="@string/tv_label_tip_percent" />
+
+    <EditText
+        android:id="@+id/et_amount_tip_percent"
+        style="@style/InputStyleLandscape"
+        android:layout_alignEnd="@+id/et_amount_bill"
+        android:layout_alignBottom="@+id/tv_label_tip_percent"
+        android:layout_toEndOf="@+id/tv_label_tip_percent"
+        android:hint="@string/et_amount_tip_percent_hint"
+        android:inputType="number" />
+
+    <!-- red line -->
+    <View
+        android:id="@+id/red_line"
+        android:layout_below="@+id/tv_label_tip_percent"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="5dip"
+        android:layout_alignStart="@+id/tv_label_bill"
+        android:layout_alignEnd="@+id/et_amount_bill"
+        android:background="#FF00" />
+
+    <TextView
+        android:id="@+id/tv_label_tip"
+        style="@style/LabelStyleLandscape"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/red_line"
+        android:layout_alignStart="@+id/tv_label_bill"
+        android:layout_alignEnd="@+id/tv_label_bill"
+        android:text="@string/tv_label_tip" />
+
+    <TextView
+        android:id="@+id/tv_amount_tip"
+        style="@style/OutputStyleLandscape"
+        android:layout_toEndOf="@+id/tv_label_tip"
+        android:layout_alignBottom="@+id/tv_label_tip"
+        android:layout_alignEnd="@+id/et_amount_bill" />
+
+    <TextView
+        android:id="@+id/tv_label_total"
+        style="@style/LabelStyleLandscape"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/tv_label_tip"
+        android:layout_alignStart="@+id/tv_label_bill"
+        android:layout_alignEnd="@+id/tv_label_bill"
+        android:text="@string/tv_label_total" />
+
+    <TextView
+        android:id="@+id/tv_amount_total"
+        style="@style/OutputStyleLandscape"
+        android:layout_toEndOf="@+id/tv_label_total"
+        android:layout_alignBottom="@+id/tv_label_total"
+        android:layout_alignEnd="@+id/et_amount_bill" />
+
+
+
+
+</RelativeLayout>

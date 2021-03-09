@@ -40,5 +40,35 @@
     <style name="ButtonStyle" parent="TextStyle">
         <item name="android:background">@color/darkGreen</item>
     </style>
+
+
+
+
+    <style name="TextStyleLandscape" parent="@android:style/TextAppearance">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
+    <style name="LabelStyleLandscape" parent="TextStyleLandscape">
+        <item name="android:background">@color/lightGray</item>
+    </style>
+
+    <style name="CenteredTextStyleLandscape" parent="TextStyleLandscape">
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="InputStyleLandscape" parent="CenteredTextStyleLandscape">
+        <item name="android:textColor">@color/darkBlue</item>
+    </style>
+
+    <style name="OutputStyleLandscape" parent="CenteredTextStyleLandscape">
+        <item name="android:background">@color/lightGreen</item>
+    </style>
+
+    <style name="ButtonStyleLandscape" parent="TextStyleLandscape">
+        <item name="android:background">@color/darkGreen</item>
+    </style>
 </resources>
 
